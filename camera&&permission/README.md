@@ -128,7 +128,7 @@ authorities = "패키지명.provider" 로 해야하지만 그래들 속성에서
       return tempFile;
   }
 
-  @Override
+  @Override
       protected void onActivityResult(int requestCode, int resultCode, Intent data) {
           super.onActivityResult(requestCode, resultCode, data);
           // 요청코드 구분
@@ -142,8 +142,6 @@ authorities = "패키지명.provider" 로 해야하지만 그래들 속성에서
                   } else {
                       imageUri = fileUri;
                   }
-                  Log.i("Camera","file=============================="+fileUri);
-                  Log.i("Camera","file=============================="+imageUri);
                   imageView.setImageURI(imageUri);
               }
           }
