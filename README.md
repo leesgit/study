@@ -4,7 +4,7 @@
 ## Contents 
 - ### 패턴
 
-  - [MVP]
+  - MVP
     -MVP 개념 
 
     -[MVP 적용해보기](https://github.com/leebyungchangPort/study/tree/master/mvp/MvpExam)
