@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "553849327022",
+    "firebase_url": "https://mfcproject-bcf62.firebaseio.com",
+    "project_id": "mfcproject-bcf62",
+    "storage_bucket": "mfcproject-bcf62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553849327022:android:b29cfb2f209bed33",
+        "android_client_info": {
+          "package_name": "com.example.lbc.mfcproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553849327022-ptsa0hfkd58kgb0iio92d53rtm1t8vur.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lbc.mfcproject",
+            "certificate_hash": "55d6b304a786a8942e33e574c33c52cdebeaa0b1"
+          }
+        },
+        {
+          "client_id": "553849327022-42pnen6auco1voeaqp4k63qn55vfkkjf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lbc.mfcproject",
+            "certificate_hash": "55ab0e4c59e0fe0afac201f17d33a628dac5d26d"
+          }
+        },
+        {
+          "client_id": "553849327022-vrodt8b6otnu3eomf8crsp2t904s7r3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7CZYcZCSETnAe-Sl8SfoP0QC3bBQ20N4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553849327022-vrodt8b6otnu3eomf8crsp2t904s7r3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
