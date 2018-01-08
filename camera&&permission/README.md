@@ -1,75 +1,73 @@
 # Camera
-Gallery ¿Í Camera ±â´ÉÀ» »ç¿ëÇØº»´Ù.
+
+## ê¶Œí•œì²´í¬
 
 
-## ±ÇÇÑÃ¼Å©
-
-
- <!-- »çÁøÀ» ÀúÀåÇÏ±â À§ÇÑ ÆÄÀÏ¿¡ ´ëÇÑ ±ÇÇÑÀ» È¹µæÇÏ±â À§ÇÑ ¼³Á¤ -->
+ <!-- ì‚¬ì§„ì„ ì €ì¥í•˜ê¸° ìœ„í•œ íŒŒì¼ì— ëŒ€í•œ ê¶Œí•œì„ íšë“í•˜ê¸° ìœ„í•œ ì„¤ì • -->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
-            <!-- resource ÆÄÀÏÀ» res/xml Æú´õ¾È¿¡ »ı¼º -->
+            <!-- resource íŒŒì¼ì„ res/xml í´ë”ì•ˆì— ìƒì„± -->
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_path"/>
         </provider>
-(·Ñ¸®ÆË ÀÌ»ó ¹öÀüÀº provider ¸¦ »ç¿ëÇØ¾ßÇÑ´Ù. (contentProvider ¶ûÀº ´Ù¸¥ °Í) ¸ÕÀú manifest¿¡ »çÁøÀ» ÀúÀåÇÏ±â À§ÇÑ ÆÄÀÏ¿¡ ´ëÇÑ ±ÇÇÑÀ» È¹µæÇÏ±â À§ÇÑ ¼³Á¤À» ÇØ¾ßÇÑ´Ù. xml Æú´õ°¡ ¾øÀ¸¸é »ı¼º. (¾Èµå·ÎÀÌµå ¸Ş´ÏÆä½ºÆ® ÇÁ·Î¹ÙÀÌ´õ °Ë»ö)
+(ë¡¤ë¦¬íŒ ì´ìƒ ë²„ì „ì€ provider ë¥¼ ì‚¬ìš©í•´ì•¼í•œë‹¤. (contentProvider ë‘ì€ ë‹¤ë¥¸ ê²ƒ) ë¨¼ì € manifestì— ì‚¬ì§„ì„ ì €ì¥í•˜ê¸° ìœ„í•œ íŒŒì¼ì— ëŒ€í•œ ê¶Œí•œì„ íšë“í•˜ê¸° ìœ„í•œ ì„¤ì •ì„ í•´ì•¼í•œë‹¤. xml í´ë”ê°€ ì—†ìœ¼ë©´ ìƒì„±. (ì•ˆë“œë¡œì´ë“œ ë©”ë‹ˆí˜ìŠ¤íŠ¸ í”„ë¡œë°”ì´ë” ê²€ìƒ‰)
 
-authorities = "ÆĞÅ°Áö¸í.provider" ·Î ÇØ¾ßÇÏÁö¸¸ ±×·¡µé ¼Ó¼º¿¡¼­ ºÒ·¯¿Í¼­ À§¿Í °°ÀÌ Ç¥±âÇÒ ¼ö ÀÖ´Ù.
+authorities = "íŒ¨í‚¤ì§€ëª….provider" ë¡œ í•´ì•¼í•˜ì§€ë§Œ ê·¸ë˜ë“¤ ì†ì„±ì—ì„œ ë¶ˆëŸ¬ì™€ì„œ ìœ„ì™€ ê°™ì´ í‘œê¸°í•  ìˆ˜ ìˆë‹¤.
 
 <paths>
-    <!-- path = /External Storage/CameraN °¡ µÈ´Ù -->
-    <!-- name = content:// ·Î ½ÃÀÛÇÏ´Â uri ÁÖ¼ÒÃ¼°èÀÇ suffix°¡ µÈ´Ù. -->
+    <!-- path = /External Storage/CameraN ê°€ ëœë‹¤ -->
+    <!-- name = content:// ë¡œ ì‹œì‘í•˜ëŠ” uri ì£¼ì†Œì²´ê³„ì˜ suffixê°€ ëœë‹¤. -->
 
     <external-path name = "Camera" path = "CameraN"/>
 </paths>
-¸®¼Ò½º ÆÄÀÏÀ» ÀúÀåÇÒ °æ·Î ¸¸µé±â. res - xml - file_path ¸¸µé±â
+ë¦¬ì†ŒìŠ¤ íŒŒì¼ì„ ì €ì¥í•  ê²½ë¡œ ë§Œë“¤ê¸°. res - xml - file_path ë§Œë“¤ê¸°
 
 
 
-- Æ¯Á¤ ±ÇÇÑÀÌ ÀÖ´ÂÁö ½Ã½ºÅÛ¿¡ ¹°¾îº»´Ù.
+- íŠ¹ì • ê¶Œí•œì´ ìˆëŠ”ì§€ ì‹œìŠ¤í…œì— ë¬¼ì–´ë³¸ë‹¤.
 ```java
-  // ¸¶½Ã¸á·Î ÀÌ»ó ¹öÀü¿¡¼­¸¸ ·±Å¸ÀÓ ±ÇÇÑ Ã¼Å©
+  // ë§ˆì‹œë©œë¡œ ì´ìƒ ë²„ì „ì—ì„œë§Œ ëŸ°íƒ€ì„ ê¶Œí•œ ì²´í¬
   if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      // level 23Àº ¸¶½Ã¸á·ÎÀÌ´Ù.  Build.VERSION_CODES.M : ¸¶½Ã¸á·Î¸¦ °¡¸®Å²´Ù.
-      // ¸¶½Ã¸á·ÎºÎÅÍ´Â ¾Õ¿¡ ´ë¹®ÀÚ ÇÑÀÚ¸¸ ½áµµ µÈ´Ù.
+      // level 23ì€ ë§ˆì‹œë©œë¡œì´ë‹¤.  Build.VERSION_CODES.M : ë§ˆì‹œë©œë¡œë¥¼ ê°€ë¦¬í‚¨ë‹¤.
+      // ë§ˆì‹œë©œë¡œë¶€í„°ëŠ” ì•ì— ëŒ€ë¬¸ì í•œìë§Œ ì¨ë„ ëœë‹¤.
       checkPermission();
   } else {
-      // ¾Æ´Ï¸é ±×³É run() ¸Ş¼Òµå ½ÇÇà
+      // ì•„ë‹ˆë©´ ê·¸ëƒ¥ run() ë©”ì†Œë“œ ì‹¤í–‰
       init();
   }
 
 
   }
 
-  @TargetApi(Build.VERSION_CODES.M)       // @RequireApi ¿Í @TargetApi ´Â µ¿ÀÏÇÏ´Ù°í »ı°¢ÇØµµ µÈ´Ù.
+  @TargetApi(Build.VERSION_CODES.M)       // @RequireApi ì™€ @TargetApi ëŠ” ë™ì¼í•˜ë‹¤ê³  ìƒê°í•´ë„ ëœë‹¤.
   private void checkPermission() {
-  // 1. ±ÇÇÑÃ¼Å© - Æ¯Á¤±ÇÇÑÀÌ ÀÖ´ÂÁö ½Ã½ºÅÛ¿¡ ¹°¾îº»´Ù.
-  // checkSelfPermission ¹İÈ¯°ªÀÌ true, false°¡ ¾Æ´Ï¶ó ¹Ì¸® Á¤ÀÇµÈ »ó¼ö·Î ¹İÈ¯ÇÑ´Ù.
+  // 1. ê¶Œí•œì²´í¬ - íŠ¹ì •ê¶Œí•œì´ ìˆëŠ”ì§€ ì‹œìŠ¤í…œì— ë¬¼ì–´ë³¸ë‹¤.
+  // checkSelfPermission ë°˜í™˜ê°’ì´ true, falseê°€ ì•„ë‹ˆë¼ ë¯¸ë¦¬ ì •ì˜ëœ ìƒìˆ˜ë¡œ ë°˜í™˜í•œë‹¤.
   if( checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
           && checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
       init();
   } else {
-      // 2. ±ÇÇÑÀÌ ¾øÀ¸¸é »ç¿ëÀÚ¿¡°Ô ±ÇÇÑÀ» ´Ş¶ó°í ¿äÃ»
-      String permissions[] = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}; // µ¿½Ã¿¡ ¿©·¯°³ È£ÃâÇÒ ¼ö ÀÖÀ¸´Ï±î º¹¼ö·Î
-      requestPermissions(permissions , REQ_PERMISSION);  // -> ±ÇÇÑÀ» ¿ä±¸ÇÏ´Â ÆË¾÷ÀÌ »ç¿ëÀÚ È­¸é¿¡ ³ëÃâµÈ´Ù.
+      // 2. ê¶Œí•œì´ ì—†ìœ¼ë©´ ì‚¬ìš©ìì—ê²Œ ê¶Œí•œì„ ë‹¬ë¼ê³  ìš”ì²­
+      String permissions[] = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}; // ë™ì‹œì— ì—¬ëŸ¬ê°œ í˜¸ì¶œí•  ìˆ˜ ìˆìœ¼ë‹ˆê¹Œ ë³µìˆ˜ë¡œ
+      requestPermissions(permissions , REQ_PERMISSION);  // -> ê¶Œí•œì„ ìš”êµ¬í•˜ëŠ” íŒì—…ì´ ì‚¬ìš©ì í™”ë©´ì— ë…¸ì¶œëœë‹¤.
 
   }
   }
 
-  // 3. »ç¿ëÀÚ°¡ ±ÇÇÑÃ¼Å© ÆË¾÷¿¡¼­ ±ÇÇÑÀ» ½ÂÀÎ ¶Ç´Â °ÅÀıÇÏ¸é ¾Æ·¡ ¸Ş¼­µå°¡ È£ÃâµÈ´Ù.
+  // 3. ì‚¬ìš©ìê°€ ê¶Œí•œì²´í¬ íŒì—…ì—ì„œ ê¶Œí•œì„ ìŠ¹ì¸ ë˜ëŠ” ê±°ì ˆí•˜ë©´ ì•„ë˜ ë©”ì„œë“œê°€ í˜¸ì¶œëœë‹¤.
   @Override
   public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
   super.onRequestPermissionsResult(requestCode, permissions, grantResults);
   if(requestCode == REQ_PERMISSION) {
-      // 3.1 »ç¿ëÀÚ°¡ ½ÂÀÎÀ» ÇßÀ½.
+      // 3.1 ì‚¬ìš©ìê°€ ìŠ¹ì¸ì„ í–ˆìŒ.
       if(grantResults[0] == PackageManager.PERMISSION_GRANTED
               && grantResults[1] == PackageManager.PERMISSION_GRANTED){
           init();
-      // 3.2 »ç¿ëÀÚ°¡ °ÅÀı ÇßÀ½.
+      // 3.2 ì‚¬ìš©ìê°€ ê±°ì ˆ í–ˆìŒ.
       } else {
           cancel();
       }
@@ -77,9 +75,9 @@ authorities = "ÆĞÅ°Áö¸í.provider" ·Î ÇØ¾ßÇÏÁö¸¸ ±×·¡µé ¼Ó¼º¿¡¼­ ºÒ·¯¿Í¼­ À§¿Í °°
   }
 ```
 
-## Camera ±â´É ÀÌ¿ë
-- **·Ñ¸®ÆË ¹öÀü±îÁö** ´Â ±ÇÇÑ È¹µæ¾øÀÌ »ç¿ëÀÌ °¡´ÉÇÏ³ª
-  **¸¶½Ã¸á·Î ÀÌ»ó ¹öÀü** Àº ÆÄÀÏ ÇÁ·Î¹ÙÀÌ´õ¸¦ ÅëÇØ ±ÇÇÑÀ» È¹µæ
+## Camera ê¸°ëŠ¥ ì´ìš©
+- **ë¡¤ë¦¬íŒ ë²„ì „ê¹Œì§€** ëŠ” ê¶Œí•œ íšë“ì—†ì´ ì‚¬ìš©ì´ ê°€ëŠ¥í•˜ë‚˜
+  **ë§ˆì‹œë©œë¡œ ì´ìƒ ë²„ì „** ì€ íŒŒì¼ í”„ë¡œë°”ì´ë”ë¥¼ í†µí•´ ê¶Œí•œì„ íšë“
 
 ```java
   Uri fileUri = null;
@@ -88,13 +86,13 @@ authorities = "ÆĞÅ°Áö¸í.provider" ·Î ÇØ¾ßÇÏÁö¸¸ ±×·¡µé ¼Ó¼º¿¡¼­ ºÒ·¯¿Í¼­ À§¿Í °°
       if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
           File photoFile = null;
           try {
-              photoFile = createFile();   //ÆÄÀÏÀ» ¸¸µé¾î¼­ ´ã´Â´Ù.
+              photoFile = createFile();   //íŒŒì¼ì„ ë§Œë“¤ì–´ì„œ ë‹´ëŠ”ë‹¤.
 
               if(photoFile != null){
-                  // ¸¶½Ã¸á·Î ÀÌ»ó ¹öÀüÀº ÆÄÀÏ ÇÁ·Î¹ÙÀÌ´õ¸¦ ÅëÇØ ±ÇÇÑÀ» È¹µæ
+                  // ë§ˆì‹œë©œë¡œ ì´ìƒ ë²„ì „ì€ íŒŒì¼ í”„ë¡œë°”ì´ë”ë¥¼ í†µí•´ ê¶Œí•œì„ íšë“
                   if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                       fileUri = FileProvider.getUriForFile(getBaseContext(), BuildConfig.APPLICATION_ID+".provider", photoFile);
-                  // ·Ñ¸®ÆË ¹öÀüÀº ±ÇÇÑ ¾øÀÌ È¹µæÀÌ °¡´É
+                  // ë¡¤ë¦¬íŒ ë²„ì „ì€ ê¶Œí•œ ì—†ì´ íšë“ì´ ê°€ëŠ¥
                   } else {
                       fileUri = Uri.fromFile(photoFile);
                   }
@@ -102,26 +100,26 @@ authorities = "ÆĞÅ°Áö¸í.provider" ·Î ÇØ¾ßÇÏÁö¸¸ ±×·¡µé ¼Ó¼º¿¡¼­ ºÒ·¯¿Í¼­ À§¿Í °°
                   startActivityForResult(intent, Const.Camera.REQ_CAMERA);
               }
           }catch(Exception e){
-              //  e.printStackTrace();  -> ¿¹¿ÜÃ³¸®¿¡¼­ ¿¡·¯°¡ ³ª¸é ÀÌ·¸°Ô ÇØÁÖ¸é ¿¡·¯¸¦ È®ÀÎÇÒ ¼ö ÀÖ´Ù.
-              Toast.makeText(getBaseContext(), "»çÁøÆÄÀÏ ÀúÀåÀ» À§ÇÑ ÀÓ½ÃÆÄÀÏÀ» »ı¼ºÇÒ ¼ö ¾ø½À´Ï´Ù.", Toast.LENGTH_SHORT).show();
-              return;  // »çÁøÆÄÀÏÀÌ »ı¼º¾ÈµÇ¸é ´õÀÌ»ó ÁøÇàµÇÁö ¾Ê°Ô ÇÏ·Á°í return; ÇÑ´Ù.
+              //  e.printStackTrace();  -> ì˜ˆì™¸ì²˜ë¦¬ì—ì„œ ì—ëŸ¬ê°€ ë‚˜ë©´ ì´ë ‡ê²Œ í•´ì£¼ë©´ ì—ëŸ¬ë¥¼ í™•ì¸í•  ìˆ˜ ìˆë‹¤.
+              Toast.makeText(getBaseContext(), "ì‚¬ì§„íŒŒì¼ ì €ì¥ì„ ìœ„í•œ ì„ì‹œíŒŒì¼ì„ ìƒì„±í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.", Toast.LENGTH_SHORT).show();
+              return;  // ì‚¬ì§„íŒŒì¼ì´ ìƒì„±ì•ˆë˜ë©´ ë”ì´ìƒ ì§„í–‰ë˜ì§€ ì•Šê²Œ í•˜ë ¤ê³  return; í•œë‹¤.
           }
 
-      } else { // ·Ñ¸®ÆË ¹Ì¸¸ ¹öÁ¯¿¡¼­¸¸ ¹Ù·Î ½ÇÇà
+      } else { // ë¡¤ë¦¬íŒ ë¯¸ë§Œ ë²„ì ¼ì—ì„œë§Œ ë°”ë¡œ ì‹¤í–‰
           startActivityForResult(intent, Const.Camera.REQ_CAMERA);
       }
   }
 
   private File createFile() throws IOException{
-      // ÀÓ½ÃÆÄÀÏ¸í »ı¼º
+      // ì„ì‹œíŒŒì¼ëª… ìƒì„±
       String tempFileName = "TEMP_"+System.currentTimeMillis();
-      // ÀÓ½ÃÆÄÀÏ ÀúÀå¿ë µğ·ºÅä¸® »ı¼º
+      // ì„ì‹œíŒŒì¼ ì €ì¥ìš© ë””ë ‰í† ë¦¬ ìƒì„±
       File tempDir = new File(Environment.getExternalStorageDirectory() + "/CameraN/");
-      // Environment.getExternalStorageDirectory() : ·çÆ®°æ·Î¸¦ °¡Á®¿È.
+      // Environment.getExternalStorageDirectory() : ë£¨íŠ¸ê²½ë¡œë¥¼ ê°€ì ¸ì˜´.
       if(!tempDir.exists()){
           tempDir.mkdir();
       }
-      // ½ÇÁ¦ ÀÓ½ÃÆÄÀÏÀ» »ı¼º
+      // ì‹¤ì œ ì„ì‹œíŒŒì¼ì„ ìƒì„±
       File tempFile = File.createTempFile(
               tempFileName,
               ".jpg",
@@ -133,12 +131,12 @@ authorities = "ÆĞÅ°Áö¸í.provider" ·Î ÇØ¾ßÇÏÁö¸¸ ±×·¡µé ¼Ó¼º¿¡¼­ ºÒ·¯¿Í¼­ À§¿Í °°
   @Override
       protected void onActivityResult(int requestCode, int resultCode, Intent data) {
           super.onActivityResult(requestCode, resultCode, data);
-          // ¿äÃ»ÄÚµå ±¸ºĞ
+          // ìš”ì²­ì½”ë“œ êµ¬ë¶„
           if(requestCode == Const.Camera.REQ_CAMERA){
-              // °á°úÃ³¸® »óÅÂ ±¸ºĞ
+              // ê²°ê³¼ì²˜ë¦¬ ìƒíƒœ êµ¬ë¶„
               if(resultCode == RESULT_OK) {
                   Uri imageUri = null;
-                  // ·Ñ¸®ÆË ¹Ì¸¸ ¹öÀü¿¡¼­´Â data ÀÎÅÙÆ®¿¡ ÂïÀº »çÁøÀÇ uri °¡ ´ã°Ü¿Â´Ù.
+                  // ë¡¤ë¦¬íŒ ë¯¸ë§Œ ë²„ì „ì—ì„œëŠ” data ì¸í…íŠ¸ì— ì°ì€ ì‚¬ì§„ì˜ uri ê°€ ë‹´ê²¨ì˜¨ë‹¤.
                   if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
                       imageUri = data.getData();
                   } else {
