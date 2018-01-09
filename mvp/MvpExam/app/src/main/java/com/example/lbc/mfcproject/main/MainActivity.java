@@ -1,4 +1,4 @@
-package com.example.lbc.mfcproject.view;
+package com.example.lbc.mfcproject.main;
 
 import android.app.Notification;
 import android.app.NotificationManager;

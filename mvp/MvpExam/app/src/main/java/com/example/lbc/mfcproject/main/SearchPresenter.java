@@ -1,14 +1,10 @@
-package com.example.lbc.mfcproject.presenter;
+package com.example.lbc.mfcproject.main;
 
 import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.example.lbc.mfcproject.adapter.SearchAdapter;
-import com.example.lbc.mfcproject.adapter.contract.SearchAdapterContract;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.data.source.UserDataSource;
-import com.example.lbc.mfcproject.data.source.UserRepository;
 import com.example.lbc.mfcproject.listener.OnItemClickListener;
 
 import java.util.List;

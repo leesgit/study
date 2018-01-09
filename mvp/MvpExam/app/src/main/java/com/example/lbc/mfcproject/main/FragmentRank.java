@@ -1,4 +1,4 @@
-package com.example.lbc.mfcproject.view;
+package com.example.lbc.mfcproject.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,25 +6,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lbc.mfcproject.R;
-import com.example.lbc.mfcproject.RetrofitManager;
 import com.example.lbc.mfcproject.adapter.PointAdapter;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.data.source.PointRepository;
-import com.example.lbc.mfcproject.presenter.RankContract;
-import com.example.lbc.mfcproject.presenter.RankPresenter;
+import com.example.lbc.mfcproject.main.RankContract;
+import com.example.lbc.mfcproject.main.RankPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by lbc on 2017-12-04.
@@ -51,7 +45,7 @@ public class FragmentRank extends Fragment implements RankContract.View {
         pointAdapter = new PointAdapter(ids);
         pointRecycler.setAdapter(pointAdapter= new PointAdapter(ids));
         ids = new ArrayList<>();
-        presenter = new RankPresenter(new PointRepository(),this,pointAdapter);
+        presenter = new RankPresenter(PointRepository.getInstance(),this,pointAdapter);
 
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

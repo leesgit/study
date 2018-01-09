@@ -56,7 +56,7 @@ public class RetrofitManager {
         }
 
         public interface RetrofitUrl {
-            String BASE_URL = "http://172.30.1.2:8080";
+            String BASE_URL = "http://172.30.1.8:8080";
 
 
             @GET("/mfc/user/point/list")

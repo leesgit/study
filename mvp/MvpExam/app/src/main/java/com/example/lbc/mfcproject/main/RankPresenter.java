@@ -1,9 +1,8 @@
-package com.example.lbc.mfcproject.presenter;
+package com.example.lbc.mfcproject.main;
 
 import android.content.Context;
 
 import com.example.lbc.mfcproject.adapter.PointAdapter;
-import com.example.lbc.mfcproject.adapter.SearchAdapter;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.data.source.PointDataSource;
 

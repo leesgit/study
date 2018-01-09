@@ -14,6 +14,14 @@ import java.util.List;
 public class PointRepository implements PointDataSource {
 
     private PointRemoteDataSource pointRemoteDataSource = new PointRemoteDataSource();
+    private static PointRepository pointRepository;
+
+    public static PointRepository getInstance() {
+        if (pointRepository==null) {
+            pointRepository = new PointRepository();
+        }
+        return pointRepository;
+    }
 
     @Override
     public void findRank(Context context, List<Id> ids, final LoadDataCallBack loadDataCallBack) {
