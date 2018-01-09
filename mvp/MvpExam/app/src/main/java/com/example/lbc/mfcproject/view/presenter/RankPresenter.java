@@ -3,6 +3,7 @@ package com.example.lbc.mfcproject.view.presenter;
 import android.content.Context;
 
 import com.example.lbc.mfcproject.adapter.PointAdapter;
+import com.example.lbc.mfcproject.adapter.contract.RecyclerAdapterContract;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.data.source.PointDataSource;
 
@@ -15,22 +16,22 @@ import java.util.List;
 public class RankPresenter implements RankContract.Presenter {
     PointDataSource pointDataSource;
     RankContract.View view;
-    PointAdapter pointAdapter;
+    RecyclerAdapterContract.View adapterView;
+    RecyclerAdapterContract.Model adapterModel;
 
-    public RankPresenter(PointDataSource pointDataSource, RankContract.View view, PointAdapter pointAdapter) {
+    public RankPresenter(PointDataSource pointDataSource, RankContract.View view) {
         this.pointDataSource = pointDataSource;
         this.view = view;
-        this.pointAdapter = pointAdapter;
     }
 
     @Override
     public void findRank(Context context, List<Id> ids) {
-        pointAdapter.clearItem();
+        adapterModel.clearItem();
         pointDataSource.findRank(context, ids, new PointDataSource.LoadDataCallBack() {
             @Override
             public void onLoadData(List<Id> ids) {
-                pointAdapter.addItems(ids);
-                pointAdapter.notifyAdapter();
+                adapterModel.addItems(ids);
+                adapterView.notifyAdapter();
             }
 
             @Override
@@ -38,5 +39,15 @@ public class RankPresenter implements RankContract.Presenter {
                 view.showToast(errorMsg);
             }
         });
+    }
+
+    @Override
+    public void setImageAdapterModel(RecyclerAdapterContract.Model adapterModel) {
+        this.adapterModel =adapterModel;
+    }
+
+    @Override
+    public void setImageAdapterView(RecyclerAdapterContract.View adapterView) {
+        this.adapterView = adapterView;
     }
 }

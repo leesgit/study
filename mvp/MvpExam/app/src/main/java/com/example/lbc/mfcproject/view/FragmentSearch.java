@@ -49,7 +49,9 @@ public class FragmentSearch extends Fragment implements SearchContract.View {
         searchAdapter = new SearchAdapter(ids);
         searchRecycler.setAdapter(searchAdapter= new SearchAdapter(ids));
 
-        presenter = new SearchPresenter(searchAdapter,UserRepository.getInstance(),this);
+        presenter = new SearchPresenter(UserRepository.getInstance(),this);
+        presenter.setImageAdapterModel(searchAdapter);
+        presenter.setImageAdapterView(searchAdapter);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override

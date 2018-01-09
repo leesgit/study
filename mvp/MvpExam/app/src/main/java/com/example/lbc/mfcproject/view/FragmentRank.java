@@ -45,7 +45,9 @@ public class FragmentRank extends Fragment implements RankContract.View {
         pointAdapter = new PointAdapter(ids);
         pointRecycler.setAdapter(pointAdapter= new PointAdapter(ids));
         ids = new ArrayList<>();
-        presenter = new RankPresenter(PointRepository.getInstance(),this,pointAdapter);
+        presenter = new RankPresenter(PointRepository.getInstance(),this);
+        presenter.setImageAdapterModel(pointAdapter);
+        presenter.setImageAdapterView(pointAdapter);
 
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

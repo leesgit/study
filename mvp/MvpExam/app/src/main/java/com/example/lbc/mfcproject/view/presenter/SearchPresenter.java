@@ -3,6 +3,7 @@ package com.example.lbc.mfcproject.view.presenter;
 import android.content.Context;
 
 import com.example.lbc.mfcproject.adapter.SearchAdapter;
+import com.example.lbc.mfcproject.adapter.contract.RecyclerAdapterContract;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.data.source.UserDataSource;
 import com.example.lbc.mfcproject.listener.OnItemClickListener;
@@ -16,23 +17,24 @@ import java.util.List;
 public class SearchPresenter implements SearchContract.Presenter, OnItemClickListener {
     UserDataSource dataSource;
     SearchContract.View view;
-    SearchAdapter searchAdapter;
+    RecyclerAdapterContract.Model adapterModel;
+    RecyclerAdapterContract.View adapterView;
 
-    public SearchPresenter(SearchAdapter searchAdapter, UserDataSource dataSource, SearchContract.View view) {
-        this.searchAdapter =searchAdapter;
+
+    public SearchPresenter( UserDataSource dataSource, SearchContract.View view) {
         this.dataSource = dataSource;
         this.view = view;
     }
 
     @Override
     public void doSearch(Context context, Id id, List<Id> ids) {
-        searchAdapter.clearItem();
+        adapterModel.clearItem();
 
         dataSource.doSearch(context, id, ids, new UserDataSource.LoadDataCallBack() {
             @Override
             public void onLoadData(List<Id> ids) {
-                searchAdapter.addItems(ids);
-                searchAdapter.notifyAdapter();
+                adapterModel.addItems(ids);
+                adapterView.notifyAdapter();
             }
 
             @Override
@@ -42,8 +44,20 @@ public class SearchPresenter implements SearchContract.Presenter, OnItemClickLis
         });
 
     }
+
+    @Override
+    public void setImageAdapterModel(RecyclerAdapterContract.Model adapterModel) {
+        this.adapterModel = adapterModel;
+
+    }
+
+    @Override
+    public void setImageAdapterView(RecyclerAdapterContract.View adapterView) {
+        this.adapterView = adapterView;
+
+    }
+
     @Override
     public void onItemClick(int position) {
-        Id id = searchAdapter.getId(position);
     }
 }

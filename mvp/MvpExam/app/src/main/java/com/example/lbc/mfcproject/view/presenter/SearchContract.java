@@ -2,6 +2,7 @@ package com.example.lbc.mfcproject.view.presenter;
 
 import android.content.Context;
 
+import com.example.lbc.mfcproject.adapter.contract.RecyclerAdapterContract;
 import com.example.lbc.mfcproject.data.Id;
 
 import java.util.List;
@@ -18,5 +19,7 @@ public interface SearchContract {
 
     interface Presenter {
         void doSearch(Context context, Id id, List<Id> ids );
+        void setImageAdapterModel(RecyclerAdapterContract.Model adapterModel);
+        void setImageAdapterView(RecyclerAdapterContract.View adapterView);
     }
 }
