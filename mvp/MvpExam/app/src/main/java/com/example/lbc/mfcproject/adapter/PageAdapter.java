@@ -4,8 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.lbc.mfcproject.main.FragmentRank;
-import com.example.lbc.mfcproject.main.FragmentSearch;
+import com.example.lbc.mfcproject.view.FragmentRank;
+import com.example.lbc.mfcproject.view.FragmentSearch;
 
 /**
  * Created by lbc on 2017-12-04.

@@ -1,20 +1,13 @@
-package com.example.lbc.mfcproject.main;
+package com.example.lbc.mfcproject.view;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import com.example.lbc.mfcproject.R;
 import com.example.lbc.mfcproject.adapter.PageAdapter;
-import com.google.firebase.messaging.FirebaseMessaging;
-
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;

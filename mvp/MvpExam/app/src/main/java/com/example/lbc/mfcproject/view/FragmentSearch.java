@@ -1,4 +1,4 @@
-package com.example.lbc.mfcproject.main;
+package com.example.lbc.mfcproject.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,8 +16,8 @@ import com.example.lbc.mfcproject.R;
 import com.example.lbc.mfcproject.adapter.SearchAdapter;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.data.source.UserRepository;
-import com.example.lbc.mfcproject.main.SearchContract;
-import com.example.lbc.mfcproject.main.SearchPresenter;
+import com.example.lbc.mfcproject.view.presenter.SearchContract;
+import com.example.lbc.mfcproject.view.presenter.SearchPresenter;
 
 import java.util.ArrayList;
 import java.util.List;

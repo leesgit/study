@@ -3,13 +3,14 @@ package com.example.lbc.mfcproject.adapter.contract;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.listener.OnItemClickListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by lbc on 2018-01-08.
  */
 
-public interface PointAdapterContract {
+public interface RecyclerAdapterContract {
     interface View {
         void setOnclickListener(OnItemClickListener onclickListener);
 
@@ -23,4 +24,5 @@ public interface PointAdapterContract {
 
         Id getId(int position);
     }
+
 }

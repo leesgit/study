@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.lbc.mfcproject.adapter.contract.PointAdapterContract;
+import com.example.lbc.mfcproject.adapter.contract.RecyclerAdapterContract;
 import com.example.lbc.mfcproject.adapter.holder.PointViewHolder;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.R;
@@ -18,7 +18,7 @@ import java.util.List;
  * Created by lbc on 2017-12-04.
  */
 
-public class PointAdapter extends RecyclerView.Adapter<PointViewHolder> implements PointAdapterContract.Model,PointAdapterContract.View {
+public class PointAdapter extends RecyclerView.Adapter<PointViewHolder> implements RecyclerAdapterContract.Model,RecyclerAdapterContract.View {
     List<Id> ids = new ArrayList<>();
     private OnItemClickListener onItemClickListener;
 

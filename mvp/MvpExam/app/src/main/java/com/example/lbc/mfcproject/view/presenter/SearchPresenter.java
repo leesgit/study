@@ -1,4 +1,4 @@
-package com.example.lbc.mfcproject.main;
+package com.example.lbc.mfcproject.view.presenter;
 
 import android.content.Context;
 

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lbc.mfcproject.R;
-import com.example.lbc.mfcproject.adapter.contract.SearchAdapterContract;
+import com.example.lbc.mfcproject.adapter.contract.RecyclerAdapterContract;
 import com.example.lbc.mfcproject.adapter.holder.SearchViewHolder;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.listener.OnItemClickListener;
@@ -18,7 +18,7 @@ import java.util.List;
  * Created by lbc on 2017-12-10.
  */
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder>  implements SearchAdapterContract.Model, SearchAdapterContract.View {
+public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder>  implements RecyclerAdapterContract.Model, RecyclerAdapterContract.View {
 
     List<Id>  ids = new ArrayList<>();
     private OnItemClickListener onItemClickListener;

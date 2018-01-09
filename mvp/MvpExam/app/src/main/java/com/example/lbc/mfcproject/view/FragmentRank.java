@@ -1,4 +1,4 @@
-package com.example.lbc.mfcproject.main;
+package com.example.lbc.mfcproject.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,8 +14,8 @@ import com.example.lbc.mfcproject.R;
 import com.example.lbc.mfcproject.adapter.PointAdapter;
 import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.data.source.PointRepository;
-import com.example.lbc.mfcproject.main.RankContract;
-import com.example.lbc.mfcproject.main.RankPresenter;
+import com.example.lbc.mfcproject.view.presenter.RankContract;
+import com.example.lbc.mfcproject.view.presenter.RankPresenter;
 
 import java.util.ArrayList;
 import java.util.List;

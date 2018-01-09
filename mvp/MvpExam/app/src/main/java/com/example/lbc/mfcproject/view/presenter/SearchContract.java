@@ -1,4 +1,4 @@
-package com.example.lbc.mfcproject.main;
+package com.example.lbc.mfcproject.view.presenter;
 
 import android.content.Context;
 
@@ -7,16 +7,16 @@ import com.example.lbc.mfcproject.data.Id;
 import java.util.List;
 
 /**
- * Created by lbc on 2018-01-08.
+ * Created by lbc on 2018-01-06.
  */
 
-public interface RankContract {
+public interface SearchContract {
 
     interface View {
         void showToast(String msg);
     }
 
     interface Presenter {
-        void findRank(Context context, List<Id> ids );
+        void doSearch(Context context, Id id, List<Id> ids );
     }
 }
