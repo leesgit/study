@@ -26,16 +26,18 @@ public class UserRepository implements UserDataSource {
 
     @Override
     public void doSearch(Context context, Id id, List<Id> ids, final LoadDataCallBack loadDataCallBack) {
-        userRemoteDataSource.doSearch(context, id, ids, new LoadDataCallBack() {
-            @Override
-            public void onLoadData(List<Id> ids) {
-                loadDataCallBack.onLoadData(ids);
-            }
+        userRemoteDataSource.doSearch(context, id, ids,loadDataCallBack);
 
-            @Override
-            public void onFailData(String errorMsg) {
-                loadDataCallBack.onFailData(errorMsg);
-            }
-        });
+//        userRemoteDataSource.doSearch(context, id, ids, new LoadDataCallBack() {
+//            @Override
+//            public void onLoadData(List<Id> ids) {
+//                loadDataCallBack.onLoadData(ids);
+//            }
+//
+//            @Override
+//            public void onFailData(String errorMsg) {
+//                loadDataCallBack.onFailData(errorMsg);
+//            }
+//        });
     }
 }

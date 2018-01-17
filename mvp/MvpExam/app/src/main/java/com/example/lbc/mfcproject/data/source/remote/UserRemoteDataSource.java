@@ -9,6 +9,7 @@ import com.example.lbc.mfcproject.data.Id;
 import com.example.lbc.mfcproject.data.source.UserDataSource;
 
 import java.util.List;
+import java.util.Optional;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,11 +25,11 @@ public class UserRemoteDataSource implements UserDataSource {
     @Override
     public void doSearch(Context context, final Id id, final List<Id> ids,final LoadDataCallBack loadDataCallBack) {
 
-
         RetrofitManager.getInstance().getUrl().search(id).enqueue(new Callback<List<Id>>() {
             @Override
             public void onResponse(Call<List<Id>> call, Response<List<Id>> response) {
-                loadDataCallBack.onLoadData(response.body());
+                if(loadDataCallBack != null)
+                    loadDataCallBack.onLoadData(response.body());
             }
 
             @Override
