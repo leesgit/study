@@ -11,6 +11,6 @@ cardview_item.xml
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-//원하는 소스코드들을 넣는다
+//원하는 소스코드들을 넣는다.
 
 </android.support.v7.widget.CardView>
