@@ -1,6 +1,6 @@
 # CardView
 
-## 코드분석
+## 코드리뷰
 
 cardview_item.xml
 
