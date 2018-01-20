@@ -2,7 +2,7 @@
 
 ## 코드분석
 
-
+```java
 public class MyViewPagerAdapter extends FragmentPagerAdapter {
 
     int images[] = {R.drawable.ic_audiotrack_black_24dp,R.drawable.ic_insert_emoticon_black_24dp,R.drawable.ic_android_black_24dp};
@@ -21,8 +21,9 @@ public class MyViewPagerAdapter extends FragmentPagerAdapter {
         return 3;
     }
 }
+```
 설정
-
+```java
 public class ItemFragment extends Fragment {
 
     public static ItemFragment newInstance(int position) {
@@ -45,3 +46,4 @@ public class ItemFragment extends Fragment {
         return view;
     }
 }
+```

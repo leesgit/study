@@ -3,7 +3,7 @@
 ## 코드리뷰
 
 MainActivity
-
+```java
 Toolbar toolbar =(Toolbar) findViewById(R.id.toolbar); //
         setSupportActionBar(toolbar);                  //툴바 세팅
         getSupportActionBar().setDisplayShowTitleEnabled(false); //타이틀 가림
@@ -42,9 +42,9 @@ drawerLayout = (DrawerLayout)findViewById(R.id.main_layout);  //layout을 DrawerL
                 return false;
             }
         });
-
+```
 activity_main.xml
-
+```java
 <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -69,3 +69,4 @@ activity_main.xml
         android:layout_gravity="start"                 //네비게이션 위치
         app:headerLayout="@layout/side_bar"            //네비게이션으로 구현할 xml
         app:menu="@menu/nav_item">
+```
