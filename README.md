@@ -13,7 +13,7 @@
   - 미니프로젝트
     - 설명(https://github.com/leesPortfolio/study/tree/master/MiniProject)
     - [realm, retroift2를 이용한 네이버 단어 검색 저장 어플](https://github.com/leesPortfolio/study/tree/master/MiniProject/MoviewBoja)
-    - [영화 순위 및(다음), 다음 지도 + 영화관 마커 + 리뷰 + 파이어베이스 채팅](현재 노트북 교체로 인한 서버 분실+ 리뷰 게시판 미구현)(https://github.com/leesPortfolio/study/tree/master/MiniProject/RealmwithRetroiftwithparsingPractice)
+    - [영화 순위 및(다음), 다음 지도 + 영화관 마커 + 리뷰 + 파이어베이스 채팅(현재 노트북 교체로 인한 서버 분실+ 리뷰 게시판 미구현)](https://github.com/leesPortfolio/study/tree/master/MiniProject/RealmwithRetroiftwithparsingPractice)
 
 - ### Android
 
