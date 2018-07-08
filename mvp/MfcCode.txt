@@ -1,0 +1,84 @@
+     CMainFrame *pFrame=(CMainFrame *)AfxGetMainWnd();
+     CMFC_Games2View *pView=(CMFC_Games2View*)pFrame->GetActiveView();
+     m_Edit.GetWindowText(sTest);
+	 if(pView->Total_score>10000)
+		MessageBox(sTest,sTest ,MB_OK);
+    CkString strOut;
+    CkHttpRequest req;
+    CkHttp http;
+
+    bool success;
+    success = http.UnlockComponent("Anything for 30-day trial");
+
+    if (success != true) {
+        strOut.append(http.lastErrorText());
+        strOut.append("\r\n");
+        return;
+    }
+
+    http.SetRequestHeader("Authorization","my-custom-computed-auth-value");
+
+    http.SetRequestHeader("X-Pass-Timestamp","my-custom-computed-timestamp-value");
+    http.SetRequestHeader("Accept","application/json");
+
+	const char *jsonText = "{ddd}";
+	jsonText +=*jsonText;
+	
+	
+	CString strNum;
+	strNum.Format(_T("%d"), pView->Total_score);
+	strNum+="}";
+	CString a =_T("{\"id\":\"");
+	a+=sTest;
+	CString b =_T("\",\"point\":");
+	a+=b;
+	a+=strNum;
+	//CString d =_T("{\"id\":\"lee\",\"point\":777}");
+	CString d = a;
+	
+	
+	wchar_t* wchar_str;     
+	char*    char_str;     
+	int      char_str_len; 
+ 
+	wchar_str = d.GetBuffer(d.GetLength());
+	char_str_len = WideCharToMultiByte(CP_ACP, 0, wchar_str, -1, NULL, 0, NULL, NULL);
+	char_str = new char[char_str_len];  
+	WideCharToMultiByte(CP_ACP, 0, wchar_str, -1, char_str, char_str_len, 0,0);  
+ 
+
+	CString message =_T("내가 1등이다!");
+	CString front =_T("{\"message\":\"");
+	front+=message;
+	front+="\"}";
+
+	//CString front =_T("{\"message\":\"lee\"}");
+	wchar_t* wchar_str2;     
+	char*    char_str2;     
+	int      char_str_len2; 
+ 
+	wchar_str2 = front.GetBuffer(front.GetLength());
+ 
+	//char* 형에 대한길이를 구함
+	char_str_len2 = WideCharToMultiByte(CP_ACP, 0, wchar_str2, -1, NULL, 0, NULL, NULL);
+	char_str2 = new char[char_str_len2];  //메모리 할당
+	//wchar_t* to char* conversion
+	WideCharToMultiByte(CP_ACP, 0, wchar_str2, -1, char_str2, char_str_len2, 0,0);  
+
+
+    CkHttpResponse *resp = 0;
+	resp = http.PostJson2("http://127.0.0.1:8080/mfc/fcm/send","application/json",char_str2);
+
+	//resp = http.PostJson2("http://192.168.122.12:8080/mfc/user/point","application/json","{\"id\":\"lee\",\"point\":900}");
+	//{\"message\":\"str\"}
+	//resp = http.PostJson2("http://127.0.0.1:8080/mfc/user/point","application/json",char_str);
+	
+    if (resp == 0 ) {
+        strOut.append(http.lastErrorText());
+        strOut.append("\r\n");
+    }
+    else {
+        strOut.append(resp->bodyStr());
+        strOut.append("\r\n");
+        delete resp;
+    }

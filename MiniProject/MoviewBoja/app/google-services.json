@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "256152751026",
+    "firebase_url": "https://movieboja-d0c8d.firebaseio.com",
+    "project_id": "movieboja-d0c8d",
+    "storage_bucket": "movieboja-d0c8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256152751026:android:5ea53f72dde546bc",
+        "android_client_info": {
+          "package_name": "com.example.lkoon.movieboja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "256152751026-mce43dbptmak32lib1n77umn0ogehof9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-YVWLUzRiqpuPDxYE_0gT5thOxQmoYzI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
