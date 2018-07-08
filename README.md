@@ -29,8 +29,8 @@
   - Toolbar&&Navigation
     - [개념](https://github.com/leesPortfolio/study/blob/master/Toolbar%26%26Navigation/README.md)
     - [예제](https://github.com/leesPortfolio/study/tree/master/Toolbar%26%26Navigation/ToolbarNavigationExam)
- - Thread&&AsyncTask
+  - Thread&&AsyncTask
     - [예제](https://github.com/leesPortfolio/study/tree/master/TreadPractice/BasicThreadAndAsync)
- - 어플에서 유튜브 동영상 시청
+  - 어플에서 유튜브 동영상 시청
     - [예제](https://github.com/leesPortfolio/study/tree/master/practice/YoutubeEx)
 
